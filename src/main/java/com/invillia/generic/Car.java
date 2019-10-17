@@ -1,19 +1,24 @@
 package com.invillia.generic;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="car")
 public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name="model")
     private String model;
 
+    @Column(name="year")
     private Integer year;
+
+    public Car(String model, Integer year) {
+        this.model = model;
+        this.year = year;
+    }
 
     public Long getId() {
         return id;
@@ -39,3 +44,5 @@ public class Car {
         this.year = year;
     }
 }
+
+//create table car(id bigserial primary key,model varchar(255) not null,year bigint not null);

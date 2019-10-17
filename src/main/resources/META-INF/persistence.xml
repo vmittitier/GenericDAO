@@ -5,10 +5,13 @@
              version="2.0">
 
     <persistence-unit name="genericSample">
+        <class>com.invillia.generic.Contact</class>
+        <class>com.invillia.generic.Car</class>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bancodigital"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/generics"/>
             <property name="javax.persistence.jdbc.user" value="incubadora" />
             <property name="javax.persistence.jdbc.password" value="123123" />
+            <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
         </properties>
     </persistence-unit>
 
